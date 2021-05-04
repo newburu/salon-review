@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong Kind:
+  = @code.kind
+p
+  strong Name:
+  = @code.name
+
+=> link_to 'Edit', edit_code_path(@code)
+'|
+=< link_to 'Back', codes_path
