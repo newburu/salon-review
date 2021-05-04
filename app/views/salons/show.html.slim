@@ -7,6 +7,9 @@ p
   strong Founder:
   = @salon.founder
 p
+  strong Category:
+  = @salon.categories.map{|category| category.name}.join(',')
+p
   strong Money:
   = @salon.money
 p

@@ -64,6 +64,6 @@ class SalonsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def salon_params
-      params.require(:salon).permit(:name, :founder, :money, :detail)
+      params.require(:salon).permit(:name, :founder, :money, :detail, category_ids: [])
     end
 end

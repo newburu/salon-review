@@ -5,6 +5,7 @@ table
     tr
       th Name
       th Founder
+      th Category
       th Money
       th Detail
       th
@@ -16,6 +17,7 @@ table
       tr
         td = salon.name
         td = salon.founder
+        td = salon.categories.map{|category| category.name}.join(',')
         td = salon.money
         td = salon.detail
         td = link_to 'Show', salon
