@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :points
+  resources :reviews
   resources :categories
   resources :salons
   resources :codes

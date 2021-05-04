@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Salon:
+  = @review.salon.name
+p
+  strong Name:
+  = @review.name
+p
+  strong Detail:
+  = @review.detail
+
+=> link_to 'Edit', edit_review_path(@review)
+'|
+=< link_to 'Back', reviews_path
