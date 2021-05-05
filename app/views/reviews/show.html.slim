@@ -7,6 +7,13 @@ p
   strong Name:
   = @review.name
 p
+  strong Point:
+  - @review.review_points.each do |rp|
+    p
+      strong
+        = "#{rp.point.name}:"
+      = rp.score
+p
   strong Detail:
   = @review.detail
 

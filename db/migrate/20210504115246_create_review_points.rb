@@ -3,7 +3,7 @@ class CreateReviewPoints < ActiveRecord::Migration[6.1]
     create_table :review_points do |t|
       t.references :review, null: false, foreign_key: true
       t.references :point, null: false, foreign_key: true
-      t.integer :vote
+      t.integer :score
 
       t.timestamps
     end

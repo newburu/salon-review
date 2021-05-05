@@ -13,6 +13,11 @@ class ReviewsController < ApplicationController
   # GET /reviews/new
   def new
     @review = Review.new
+    points = []
+    Point.all.each do |point|
+      points << {point: point}
+    end
+    @review.review_points.build(points)
   end
 
   # GET /reviews/1/edit
@@ -64,6 +69,6 @@ class ReviewsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def review_params
-      params.require(:review).permit(:salon_id, :name, :detail)
+      params.require(:review).permit(:salon_id, :name, :detail, review_points_attributes: [:review_id, :point_id, :score])
     end
 end

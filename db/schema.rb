@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2021_05_04_115246) do
   create_table "review_points", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "review_id", null: false
     t.bigint "point_id", null: false
-    t.integer "vote"
+    t.integer "score"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["point_id"], name: "index_review_points_on_point_id"
