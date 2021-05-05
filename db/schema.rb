@@ -44,6 +44,8 @@ ActiveRecord::Schema.define(version: 2021_05_04_115246) do
   create_table "reviews", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "salon_id", null: false
     t.string "name"
+    t.integer "sex"
+    t.integer "age"
     t.text "detail"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

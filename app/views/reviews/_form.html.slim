@@ -5,10 +5,12 @@
   .form-inputs
     = f.association :salon
     = f.input :name
+    = f.input :sex, collection: Review.sexes.keys, required: false
+    = f.input :age, collection: Review.ages.keys, required: false
     = f.simple_fields_for :review_points do |rp|
       = rp.input :review_id, as: :hidden
       = rp.input :point_id, as: :hidden
-      = rp.input :score, collection: ReviewPoint.scores, required: false, label: rp.object.point.name
+      = rp.input :score, collection: ReviewPoint.scores.keys, required: false, label: rp.object.point.name
     = f.input :detail
 
   .form-actions
