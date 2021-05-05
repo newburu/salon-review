@@ -1,0 +1,43 @@
+ja:
+  activerecord:
+    models:
+      category: カテゴリー
+      salon: サロン
+      review: レビュー
+      point: レビューポイント
+    attributes:
+      id: ID
+      created_at: 作成日時
+      updated_at: 更新日時
+      category:
+        name: カテゴリー名
+      salon:
+        name: 名前
+        founder: 創設者
+        categories: カテゴリー
+        money: 金額
+        detail: 詳細
+      review:
+        salon: サロン
+        name: 名前
+        sex: 性別
+        age: 年齢
+        detail: 詳細
+      review_point:
+        score: スコア
+      point:
+        name: ポイント名
+
+  enums:
+    review:
+      sex:
+        male: 男性
+        female: 女性
+        other: その他
+      age:
+        s10: 10代
+        s20: 20代
+        s30: 30代
+        s40: 40代
+        s50: 50代
+        s60: 60代

@@ -61,3 +61,7 @@ gem 'slim-rails'
 gem 'simple_form'
 
 gem 'sprockets', '~> 3.7.2'
+
+# i18n
+gem 'rails-i18n'
+gem 'enum_help'

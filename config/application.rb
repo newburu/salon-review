@@ -19,5 +19,12 @@ module SalonReview
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
     config.generators.template_engine = :slim #slimに変更
+
+    # 言語・タイムゾーンを日本に設定
+    config.i18n.default_locale = :ja
+    config.time_zone = 'Tokyo'
+    config.active_record.default_timezone = :local
+    # config/locales/配下の全てのrb, ymlファイルを読み込み対象とする
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]  
   end
 end
