@@ -65,3 +65,7 @@ gem 'sprockets', '~> 3.7.2'
 # i18n
 gem 'rails-i18n'
 gem 'enum_help'
+
+# Bootstrap
+gem 'bootstrap'
+gem 'jquery-rails'
