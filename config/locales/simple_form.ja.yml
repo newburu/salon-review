@@ -1,0 +1,23 @@
+ja:
+  simple_form:
+    "yes": 'はい'
+    "no": 'いいえ'
+    required:
+      html: '<abbr class="nec">必須</abbr>'
+      mark: '*'
+      message: '印のついている項目は入力が必須です。'
+    error_notification:
+      default_message: "エラーがあります。確認してください。"
+    confirm:
+      delete: "削除しますか？"
+      update: "更新しますか？"
+    btn:
+      new: '新規作成'
+      show: '参照'
+      edit: '編集'
+      destory: '削除'
+      back: '戻る'
+      download: 'ダウンロード'
+      search: '探す'
+      remove: '削除'
+      add: '追加'

@@ -66,6 +66,15 @@ gem 'sprockets', '~> 3.7.2'
 gem 'rails-i18n'
 gem 'enum_help'
 
-# Bootstrap
-gem 'bootstrap'
-gem 'jquery-rails'
+# 検索
+gem 'ransack'
+gem 'kaminari'
+
+# 設定
+gem 'config'
+
+# SEO
+gem 'meta-tags'
+
+# Font Awesome
+gem 'font-awesome-sass'

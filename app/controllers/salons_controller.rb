@@ -3,7 +3,9 @@ class SalonsController < ApplicationController
 
   # GET /salons or /salons.json
   def index
-    @salons = Salon.all
+    condition = params[:q] || {}
+    @q = Salon.ransack(condition)
+    @salons = @q.result.page(params[:page])
   end
 
   # GET /salons/1 or /salons/1.json

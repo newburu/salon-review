@@ -1,13 +1,35 @@
-h1 Listing salons
+- set_meta_tags title: "#{t('.title')}", og: {title: "#{Settings.system[:title]}：「#{t('.title')}」"}
 
-table
+= search_form_for @q do |f|
+  .row
+    .col-12
+      = f.input :name_cont, required: false, label: t('activerecord.attributes.salon.name')
+  .row
+    .col-12
+      = f.input :founder_cont, required: false, label: t('activerecord.attributes.salon.founder')
+  .row
+    .col-12
+      = f.input :money_cont, required: false, label: t('activerecord.attributes.salon.money')
+  .row
+    .col-12
+      = f.input :detail_cont, required: false, label: t('activerecord.attributes.salon.detail')
+  .btn-toolbar
+    .btn-group.mr-2
+      = button_tag type: 'submit', class: "btn btn-primary"
+        = image_tag "icon/search.png", size: '16x16'
+        span.mr-2
+        = t('helpers.submit.search')
+      = link_to t('salon_form.btn.new'), new_salon_path, class: "btn btn-primary"
+
+hr
+
+table.table.table-striped.table-hover.table-responsive.table-bordered
   thead
     tr
-      th Name
-      th Founder
-      th Category
-      th Money
-      th Detail
+      th = sort_link(@q, :name)
+      th = sort_link(@q, :founder)
+      th = sort_link(@q, :money)
+      th = sort_link(@q, :detail)
       th
       th
       th
@@ -15,15 +37,19 @@ table
   tbody
     - @salons.each do |salon|
       tr
-        td = salon.name
-        td = salon.founder
-        td = salon.categories.map{|category| category.name}.join(',')
-        td = salon.money
-        td = salon.detail
-        td = link_to 'Show', salon
-        td = link_to 'Edit', edit_salon_path(salon)
-        td = link_to 'Destroy', salon, data: { confirm: 'Are you sure?' }, method: :delete
+        td.align-middle.ellipsis style="max-width: unset;"
+          = salon.name
+        td.align-middle.ellipsis style="max-width: unset;"
+          = salon.founder
+        td.align-middle.ellipsis style="max-width: unset;"
+          = salon.money
+        td.align-middle.ellipsis style="max-width: unset;"
+          = salon.detail
+        td.align-middle
+          = link_to t('salon_form.btn.show'), salon
+        td.align-middle
+          = link_to t('salon_form.btn.edit'), edit_salon_path(salon)
+        td.align-middle
+          = link_to t('salon_form.btn.destory'), salon, data: { confirm: t('system.confirm.destory') }, method: :delete
 
-br
-
-= link_to 'New Salon', new_salon_path
+= paginate @salons
