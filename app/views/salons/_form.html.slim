@@ -6,14 +6,29 @@
         - @salon.errors.full_messages.each do |message|
           li = message
 
-  .field
-    = f.input :name
-  .field
-    = f.input :founder
-  .field
-    = f.association :categories, as: :check_boxes
-  .field
-    = f.input :money
-  .field
-    = f.input :detail
-  .actions = f.submit
+  .form-inputs
+    .row
+      .col-6
+        = f.label :name
+        = help_icon t('salon_form.help.name')
+        = f.input :name, label: false
+    .row
+      .col-6
+        = f.label :founder
+        = f.input :founder, label: false
+    .row
+      .col-6
+        = f.label :categories
+        = f.association :categories, as: :check_boxes, label: false
+    .row
+      .col-6
+        = f.label :money
+        = f.input :money, label: false
+    .row
+      .col-6
+        = f.label :detail
+        = f.input :detail, label: false
+
+  .form-actions
+    => f.button :submit, class: "btn btn-primary"
+    =< link_to t('simple_form.btn.back'), salons_path, class: "btn btn-secondary"

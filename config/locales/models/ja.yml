@@ -28,6 +28,25 @@ ja:
       point:
         name: ポイント名
 
+  salons:
+    index:
+      title: サロン一覧
+  categories:
+    index:
+      title: カテゴリ一覧
+  reviews:
+    index:
+      title: 評価一覧
+
+  salon_form:
+    btn:
+      new: '新しいサロンを登録する'
+      show: '参照'
+      edit: '編集'
+      destory: '削除'
+    help:
+      name: 'aaa'
+
   enums:
     review:
       sex:
