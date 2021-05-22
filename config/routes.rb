@@ -13,6 +13,6 @@ Rails.application.routes.draw do
   get 'static_pages/terms'
   get 'static_pages/privacy'
   
-  root 'salons#index'
+  root 'tops#index'
 
 end
