@@ -17,60 +17,61 @@ html
   body
     header.header.fixed-top
       nav.menu.nav.navbar.navbar-expand-lg.navbar-dark.bg-primary
-        = link_to root_path, {class: 'navbar-brand'} do
-          = image_tag "logo.png", size: "32x32"
-          span.mr-2.system-font
-            = Settings.system[:title]
-        button.navbar-toggler.navbar-toggler-right type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"
-          span.navbar-toggler-icon
-        #navbar.navbar-collapse.collapse
-          ul.navbar-nav.mr-auto
-              li.nav-item.dropdown
-                = link_to salons_path, {class: "nav-item nav-link"} do
-                  = image_tag "icon/flag.png", size: "32x32"
-                  span.mr-2
-                    = t('salons.index.title')
-              li.nav-item.dropdown
-                = link_to categories_path, {class: "nav-item nav-link"} do
-                  = image_tag "icon/flag.png", size: "32x32"
-                  span.mr-2
-                    = t('categories.index.title')
-              li.nav-item.dropdown
-                = link_to reviews_path, {class: "nav-item nav-link"} do
-                  = image_tag "icon/flag.png", size: "32x32"
-                  span.mr-2
-                    = t('reviews.index.title')
-      // 専用のヘッダーがある場合は表示する
-      = render_any ["#{controller.action_name}_header","header", "layouts/header"]
+        .container
+          = link_to root_path, {class: 'navbar-brand'} do
+            = image_tag "logo.png", size: "32x32"
+            span.mr-2.system-font
+              = Settings.system[:title]
+          button.navbar-toggler.navbar-toggler-right type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"
+            span.navbar-toggler-icon
+          #navbar.navbar-collapse.collapse
+            ul.navbar-nav.mr-auto
+                li.nav-item.dropdown
+                  = link_to salons_path, {class: "nav-item nav-link"} do
+                    = image_tag "icon/flag.png", size: "32x32"
+                    span.mr-2
+                      = t('salons.index.title')
+                li.nav-item.dropdown
+                  = link_to categories_path, {class: "nav-item nav-link"} do
+                    = image_tag "icon/flag.png", size: "32x32"
+                    span.mr-2
+                      = t('categories.index.title')
+                li.nav-item.dropdown
+                  = link_to reviews_path, {class: "nav-item nav-link"} do
+                    = image_tag "icon/flag.png", size: "32x32"
+                    span.mr-2
+                      = t('reviews.index.title')
+        // 専用のヘッダーがある場合は表示する
+        = render_any ["#{controller.action_name}_header","header", "layouts/header"]
     .container
       = yield
 
-  p#page_top
-    = link_to "", "#"
+    p#page_top
+      = link_to "", "#"
 
-  = render 'shared/adsense'
+    = render 'shared/adsense'
 
-  footer.bg-primary
-    .container
-      .row
-        .col-sm-12
-          .menu
-            .row.text-center
-              .col
-                = link_to '利用規約', static_pages_terms_path, {class: "not-link"}
-                = link_to "プライバシーポリシー", static_pages_privacy_path, {class: "not-link"}
-                = link_to "このサイトについて", static_pages_info_path, {class: "not-link"}
-                - if Settings.system[:trello_url].present?
-                  = link_to "進捗管理(Trello)", Settings.system[:trello_url], {class: "not-link", target: "_blank"}
-                - if Settings.system[:bbs_url].present?
-                  = link_to "BBS", Settings.system[:bbs_url], {class: "not-link", target: "_blank"}
-                - if Settings.system[:google_form_url].present?
-                  = link_to "お問い合わせ", Settings.system[:google_form_url], {class: "not-link", target: "_blank"}
-                - if Settings.system[:official_twitter_id].present?
-                  = link_to '公式Twitter', Settings.system[:twitter][:url] + '/' + Settings.system[:official_twitter_id], {class: "not-link", target: "_blank"}
-      .row.copyarea
-        .col-lg.text-right
-          p class="license" &copy; 2021 Newburu.
+    footer.bg-primary
+      .container
+        .row
+          .col-sm-12
+            .menu
+              .row.text-center
+                .col
+                  = link_to '利用規約', static_pages_terms_path, {class: "not-link"}
+                  = link_to "プライバシーポリシー", static_pages_privacy_path, {class: "not-link"}
+                  = link_to "このサイトについて", static_pages_info_path, {class: "not-link"}
+                  - if Settings.system[:trello_url].present?
+                    = link_to "進捗管理(Trello)", Settings.system[:trello_url], {class: "not-link", target: "_blank"}
+                  - if Settings.system[:bbs_url].present?
+                    = link_to "BBS", Settings.system[:bbs_url], {class: "not-link", target: "_blank"}
+                  - if Settings.system[:google_form_url].present?
+                    = link_to "お問い合わせ", Settings.system[:google_form_url], {class: "not-link", target: "_blank"}
+                  - if Settings.system[:official_twitter_id].present?
+                    = link_to '公式Twitter', Settings.system[:twitter][:url] + '/' + Settings.system[:official_twitter_id], {class: "not-link", target: "_blank"}
+        .row.copyarea
+          .col-lg.text-right
+            p class="license" &copy; 2021 Newburu.
 
-      // 専用のフッターがある場合は表示する
-      = render_any ["#{controller.action_name}_footer", "footer", "layouts/footer"]
+        // 専用のフッターがある場合は表示する
+        = render_any ["#{controller.action_name}_footer", "footer", "layouts/footer"]
