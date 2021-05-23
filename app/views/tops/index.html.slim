@@ -7,13 +7,7 @@
             i.fas.fa-comment
             =< '新着レビュー'
       - @reviews.each do |review|
-        .latest-review-list-item
-          h5
-            = link_to review.salon.name, review
-          .star
-            ここに星評価が表示される
-          h6
-            = review.detail
+        = render partial: "shared/contents/list-item/review", locals: {review: review}
         .latest-review-list-item
           .center
             = link_to 'もっと見る', reviews_path({q: {s: 'created_at desc'}})
@@ -25,34 +19,9 @@
             i.fas.fa-book-open
             =< '新着サロン'
       - @salons.each do |salon|
-        .latest-salon-list-item
-          h5
-            = link_to salon.name, salon
-          .star
-            ここに星評価が表示される
-          .review-cnt
-            = link_to salon.reviews.first
-              i.fas.fa-comment
-                = salon.reviews.count
-          h6
-            = salon.detail
+        = render partial: "shared/contents/list-item/salon", locals: {salon: salon}
       .latest-salon-list-item
         .center
           = link_to 'もっと見る', salons_path({q: {s: 'created_at desc'}})
 
-  .col-lg-4.col-sub
-    .category-list
-      h2
-        = link_to categories_path
-          span.text-primary
-            i.fas.fa-book-open
-            =< 'カテゴリ一覧'
-      - @categories.each do |category|
-        .category-list-item
-          h5
-            = link_to category.name, category
-          .review-cnt
-            i.fas.fa-book-open
-              = category.name
-            i.fas.fa-comment
-              = category.name
+  = render partial: "shared/contents/sub_menu", locals: {categories: @categories}

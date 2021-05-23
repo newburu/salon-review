@@ -1,0 +1,15 @@
+.row
+  .col-lg-8.col-main
+    .latest-salon-list
+      h2
+        span.text-primary
+          i.fas.fa-folder-open
+          =< "#{@category.name}のサロン一覧"
+      - @category.salons.each do |salon|
+        = render partial: "shared/contents/list-item/salon", locals: {salon: salon}
+
+      .latest-salon-list-item
+        .center
+          = link_to 'もっと見る', salons_path({q: {s: 'created_at desc'}})
+
+  = render partial: "shared/contents/sub_menu", locals: {categories: @categories}

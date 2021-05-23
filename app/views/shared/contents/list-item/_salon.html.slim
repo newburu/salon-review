@@ -1,0 +1,11 @@
+.latest-salon-list-item
+  h5
+    = link_to salon.name, salon
+  .star
+    ここに星評価が表示される
+  .review-cnt
+    = link_to salon.reviews.first
+      i.fas.fa-comment
+        = salon.reviews.count
+  h6
+    = salon.detail
