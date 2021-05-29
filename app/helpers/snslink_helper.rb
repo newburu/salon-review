@@ -1,10 +1,5 @@
 module SnslinkHelper
 
-  # Eventのリンク生成
-  def event_view_path(event)
-    event_path(id: event.id, t: Time.new.to_i)
-  end
-
   # Twitter投稿へのリンク
   def link_to_twitter(url, msg, hashtags)
     link_to Settings.system[:twitter][:share_url] + "?url=#{url}&text=#{msg}&hashtags=#{hashtags}", class: "btn", style: "font-size: 2rem;color:#1DA1F2;", target: "_blank", rel: "noopener" do

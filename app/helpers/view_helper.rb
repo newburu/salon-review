@@ -1,5 +1,5 @@
 module ViewHelper
   def help_icon(title, placement = "right")
-    icon "far", "question-circle", data: {toggle: "tooltip", placement: placement, html: true, title: title, animation: true}
+    "<i class='far fa-question-circle' data-toggle='tooltip', data-placement='#{placement}', data-html='true', data-title='#{title}', data-animation='true'></i>".html_safe
   end
 end
