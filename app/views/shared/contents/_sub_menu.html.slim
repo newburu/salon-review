@@ -6,11 +6,4 @@
           i.fas.fa-folder-open
           =< 'カテゴリ一覧'
     - categories.each do |category|
-      .category-list-item
-        h5
-          = link_to category.name, category
-        .review-cnt
-          i.fas.fa-folder-open
-            = category.name
-          i.fas.fa-comment
-            = category.name
+      = render partial: "shared/contents/list-item/category", locals: {category: category}
