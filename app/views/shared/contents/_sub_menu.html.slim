@@ -1,4 +1,15 @@
 .col-lg-4.col-sub
+  .menu-list
+    h2
+      = link_to new_salon_path
+        span.text-primary
+          i.fas.fa-bars
+          =< 'メニュー'
+    .list-group
+      = link_to new_salon_path, {class: "menu-list-item list-group-item list-group-item-action"}
+        i.fas.fa-plus-square
+        =< '新規サロン追加'
+
   .category-list
     h2
       = link_to categories_path
@@ -6,11 +17,4 @@
           i.fas.fa-folder-open
           =< 'カテゴリ一覧'
     - categories.each do |category|
-      .category-list-item
-        h5
-          = link_to category.name, category
-        .review-cnt
-          i.fas.fa-folder-open
-            = category.name
-          i.fas.fa-comment
-            = category.name
+      = render partial: "shared/contents/list-item/category", locals: {category: category}

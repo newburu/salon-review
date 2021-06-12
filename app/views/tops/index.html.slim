@@ -8,9 +8,9 @@
             =< '新着レビュー'
       - @reviews.each do |review|
         = render partial: "shared/contents/list-item/review", locals: {review: review}
-        .latest-review-list-item
-          .center
-            = link_to 'もっと見る', reviews_path({q: {s: 'created_at desc'}})
+      .latest-review-list-item.more
+        .text-center
+          = link_to 'もっと見る', reviews_path({q: {s: 'created_at desc'}})
 
     .latest-salon-list
       h2
@@ -20,8 +20,7 @@
             =< '新着サロン'
       - @salons.each do |salon|
         = render partial: "shared/contents/list-item/salon", locals: {salon: salon}
-      .latest-salon-list-item
-        .center
-          = link_to 'もっと見る', salons_path({q: {s: 'created_at desc'}})
+      .latest-salon-list-item.more.text-center
+        = link_to 'もっと見る', salons_path({q: {s: 'created_at desc'}})
 
   = render partial: "shared/contents/sub_menu", locals: {categories: @categories}

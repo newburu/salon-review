@@ -1,0 +1,9 @@
+.list-group
+  = link_to category, {class: "category-list-item list-group-item list-group-item-action d-flex justify-content-between"}
+    = category.name
+    .review-cnt.text-right
+      i.fas.fa-book-open
+        =< category.salons.count
+      =>
+      i.fas.fa-comment
+        =< category.reviews_count
