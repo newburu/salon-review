@@ -67,6 +67,30 @@ body {
     }
 }
 
+// メニュー
+.menu-list {
+    margin-bottom: 10px;
+    border: 1px solid #e0e0e0;
+    background: #fff;
+    h2 {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-top: 15px;
+        border-bottom: 1px dashed #aaa;
+        a {
+            margin-left: 10px;
+        }
+    }
+}
+
+.menu-list-item {
+    border-bottom: 1px solid #efefef;
+    padding: 10px;
+    h5 {
+        font-size: 1.2em;
+    }
+}
+
 // カテゴリ一覧
 .category-list {
     margin-bottom: 10px;

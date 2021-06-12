@@ -1,4 +1,15 @@
 .col-lg-4.col-sub
+  .menu-list
+    h2
+      = link_to new_salon_path
+        span.text-primary
+          i.fas.fa-bars
+          =< 'メニュー'
+    .list-group
+      = link_to new_salon_path, {class: "menu-list-item list-group-item list-group-item-action"}
+        i.fas.fa-plus-square
+        =< '新規サロン追加'
+
   .category-list
     h2
       = link_to categories_path
