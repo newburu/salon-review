@@ -25,43 +25,7 @@ p
 =< link_to 'Back', reviews_path
 
 javascript:
-  const data = {
-    labels: #{{@review.review_points.map{|rp|rp.point.name}}},
-    datasets: [{
-      label: '評価',
-      data: #{{@review.review_points.map{|rp|rp.score_before_type_cast}}},
-      fill: true,
-      backgroundColor: 'rgba(255, 99, 132, 0.2)',
-      borderColor: 'rgb(255, 99, 132)',
-      pointBackgroundColor: 'rgb(255, 99, 132)',
-      pointBorderColor: '#fff',
-      pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgb(255, 99, 132)'
-    }, {
-      label: '平均',
-      data: #{{@review.review_points.map{|rp|rp.score_before_type_cast}}},
-      fill: true,
-      backgroundColor: 'rgba(54, 162, 235, 0.2)',
-      borderColor: 'rgb(54, 162, 235)',
-      pointBackgroundColor: 'rgb(54, 162, 235)',
-      pointBorderColor: '#fff',
-      pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgb(54, 162, 235)'
-    }]
-  };
-  let chartCanvas = document.getElementById('chartPoint');
-  let chart = new Chart(chartCanvas, {
-    type: 'radar',
-    data: data,
-    options: {
-      scales: {
-        r: {
-            angleLines: {
-                display: true
-            },
-            suggestedMin: 1,
-            suggestedMax: 5
-        }
-    }
-    },
-  });
+  const labels = #{{@review.review_points.map { | rp | rp.point.name }}};
+  const myData = #{{@review.review_points.map { | rp | rp.score_before_type_cast }}};
+  const avgData = #{{@review.review_points.map { | rp | rp.score_before_type_cast }}};
+  makeChart('chartPoint', labels, myData, avgData);
