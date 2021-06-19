@@ -13,7 +13,5 @@ import '../stylesheets/application'
 Rails.start()
 ActiveStorage.start()
 
-import '@fortawesome/fontawesome-free/js/all';
-
 import 'main'
 import 'chart'

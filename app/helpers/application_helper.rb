@@ -64,5 +64,10 @@ module ApplicationHelper
   
     render partial, options
   end
-  
+
+  # スコアの星マーク
+  def start_mark(score)
+    icon("fas", "star") * score
+  end
+
 end

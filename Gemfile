@@ -75,3 +75,6 @@ gem 'config'
 
 # SEO
 gem 'meta-tags'
+
+# FontAwesome
+gem 'font-awesome-sass'

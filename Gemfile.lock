@@ -120,6 +120,8 @@ GEM
       activesupport (>= 3.0.0)
     erubi (1.10.0)
     ffi (1.15.0)
+    font-awesome-sass (5.15.1)
+      sassc (>= 1.11)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     i18n (1.8.10)
@@ -274,6 +276,7 @@ DEPENDENCIES
   capybara (>= 3.26)
   config
   enum_help
+  font-awesome-sass
   jbuilder (~> 2.7)
   kaminari
   listen (~> 3.3)
