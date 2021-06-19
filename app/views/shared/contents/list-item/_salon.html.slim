@@ -2,7 +2,7 @@
   h5
     = link_to salon.name, salon
   .star
-    ここに星評価が表示される
+    = start_mark(salon.avg_review_points)
   .review-cnt
     = link_to salon.reviews.first
       i.fas.fa-comment

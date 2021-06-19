@@ -67,7 +67,9 @@ module ApplicationHelper
 
   # スコアの星マーク
   def start_mark(score)
-    icon("fas", "star") * score
+    score = score.to_i
+
+    (icon("fas", "star") * score) + (icon("far", "star") * (5 - score))
   end
 
 end
