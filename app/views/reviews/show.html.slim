@@ -14,11 +14,9 @@ p
   = @review.age
 p
   strong Point:
-  - @review.review_points.each do |rp|
-    p
-      strong
-        = "#{rp.point.name}:"
-      = rp.score
+  div style="width: 200px; height: 200px;"
+    canvas#chartPoint
+  = render partial: "shared/contents/list-item/point", locals: {points: @review.review_points}
 p
   strong Detail:
   = @review.detail
@@ -26,3 +24,9 @@ p
 => link_to 'Edit', edit_review_path(@review)
 '|
 =< link_to 'Back', reviews_path
+
+javascript:
+  const labels = #{{@review.review_points.map { | rp | rp.point.name }}};
+  const myData = #{{@review.review_points.map { | rp | rp.score_before_type_cast }}};
+  const avgData = #{{@review.review_points.map { | rp | rp.score_before_type_cast }}};
+  makeChart('chartPoint', labels, myData, avgData);

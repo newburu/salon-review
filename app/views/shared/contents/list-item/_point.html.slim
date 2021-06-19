@@ -1,0 +1,6 @@
+.point-list
+  - points.each do |point|
+    .point-list-item
+      = point.point.name
+      = start_mark(point.score_before_type_cast)
+      = point.score_before_type_cast
