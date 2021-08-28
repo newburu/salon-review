@@ -45,7 +45,10 @@ html
         // 専用のヘッダーがある場合は表示する
         = render_any ["#{controller.action_name}_header","header", "layouts/header"]
     .container
-      = yield
+      .row
+        .col-lg-8.col-main
+          = yield
+        = render partial: "shared/contents/sub_menu", locals: {categories: @categories}
 
     p#page_top
       = link_to "", "#"
